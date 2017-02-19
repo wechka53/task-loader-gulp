@@ -1,0 +1,27 @@
+{
+  "name": "task-loader-gulp",
+  "version": "1.0.0",
+  "description": "es6 module for gulp tasks load",
+  "main": "index.js",
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "compile": "babel --source-maps -d lib/ src/",
+    "minify": "uglifyjs lib/loader.js --compress  --mangle -o lib/loader.min.js",
+    "cleaning": "rm lib/*.map && rm lib/loader.js",
+    "prepublish": "npm run compile && npm run minify && npm run cleaning"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "globby": "^6.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "path": "^0.12.7",
+    "yargs": "^6.6.0"
+  }
+}
