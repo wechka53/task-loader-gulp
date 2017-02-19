@@ -1,10 +1,13 @@
 {
   "name": "task-loader-gulp",
-  "version": "1.0.0",
-  "description": "es6 module for gulp tasks load",
+  "version": "1.0.2",
+  "description": "This is fork of https://github.com/yurii-sorokin/load-gulp-tasks",
   "main": "index.js",
-  "repository": {},
-  "license": "MIT",
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/wechka53/task-loader-gulp.git"
+   },
+  "license": "MIT",  
   "scripts": {
     "compile": "babel --source-maps -d lib/ src/",
     "minify": "uglifyjs lib/loader.js --compress  --mangle -o lib/loader.min.js",
