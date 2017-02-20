@@ -1,1 +1,1 @@
-require('./lib/loader.min');
+module.exports = require('./lib/loader.min');

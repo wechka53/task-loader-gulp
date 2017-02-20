@@ -1,6 +1,6 @@
 {
   "name": "task-loader-gulp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is fork of https://github.com/yurii-sorokin/load-gulp-tasks",
   "main": "index.js",
   "repository": {

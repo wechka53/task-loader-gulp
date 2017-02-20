@@ -1,6 +1,6 @@
 import path from 'path';
 import globby from 'globby';
-import { argv } from 'yargs'
+import {argv} from 'yargs';
 import gulpLoadPlugin from 'gulp-load-plugins';
 
 export default (gulp, options, plugins) => {
@@ -19,10 +19,14 @@ export default (gulp, options, plugins) => {
         });
 
     globby.sync(pattern).forEach(function (file) {
-        let taskConfig = require(path.join(cwd, file)).default;
+        let taskConfig = require(path.join(cwd, file));
 
         if (typeof taskConfig === 'function') {
             taskConfig(gulp, options, plugins);
+        }
+
+        if (typeof taskConfig === "object" && taskConfig.default) {
+            taskConfig.default(gulp, options, plugins);
         }
     });
 };
